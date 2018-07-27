@@ -1,0 +1,78 @@
+﻿#pragma kernel Cal
+#pragma kernel Init
+//#pragma kernel Blur
+
+struct Info
+{
+	float3 pos, v;
+};
+
+Texture2D<float4> noice_texture;
+SamplerState samplernoice_texture;
+RWStructuredBuffer<Info> particle_buffer;
+RWStructuredBuffer<Info> switch_buffer;
+int count;
+
+float rand(float2 uv) {
+	float noiseX = (frac(sin(dot(uv, float2(12.9898, 78.233) * 2.0)) * 43758.5453)) * 2 - 1;
+	float noiseY = sqrt(1 - noiseX * noiseX);
+	return noiseX + noiseY;
+}
+
+float2 rand2(float2 uv) {
+	float noiseX = (frac(sin(dot(uv, float2(12.9898, 78.233) * 2.0)) * 43758.5453)) * 2 - 1;
+	float noiseY = sqrt(1 - noiseX * noiseX);
+	return float2(noiseX, noiseY);
+}
+
+[numthreads(64,1,1)]
+void Cal(uint id : SV_DispatchThreadID)
+{
+	Info self = particle_buffer[id];
+	float a = noice_texture.SampleLevel(samplernoice_texture, (float)id/count, 0);
+	float b = noice_texture.SampleLevel(samplernoice_texture, float2(a, id), 0);
+	float c = noice_texture.SampleLevel(samplernoice_texture, float2(b, a), 0);
+	self.pos += (float3(a,b,c) * 2 - 1) * 0.1;
+	for (int i = 0; i < id; i++) {
+		Info target = particle_buffer[i];
+		float3 dir = normalize(self.pos - target.pos);
+		float dis = length(target.pos - self.pos);
+		float s = step(dis, 0.01) * clamp(1 / dis, 0, 4);
+		float t = clamp(10 / dis / dis, 0, 4);
+		self.v += dir * (s - t);
+	};
+	for (int i = id+1; i < count; i++) {
+		Info target = particle_buffer[i];
+		float3 dir = normalize(self.pos - target.pos);
+		float dis = length(target.pos - self.pos);
+		float s = step(dis, 0.001) * clamp(10 / dis / dis, 0, 10000);
+		float t = clamp(1 / dis, 0, 4);
+		self.v += dir * (s - t);
+	};
+	self.v += float3(0, -1, 0);
+	self.v *= 0.8;
+	self.pos += self.v * 0.01;
+	switch_buffer[id] = self;
+}
+
+[numthreads(64, 1, 1)]
+void Init(uint id : SV_DispatchThreadID)
+{
+	Info self = particle_buffer[id];
+	float a = noice_texture.SampleLevel(samplernoice_texture, (float)id / count, 0);
+	float b = noice_texture.SampleLevel(samplernoice_texture, float2(a, id), 0);
+	float c = noice_texture.SampleLevel(samplernoice_texture, float2(b, a), 0);
+	self.pos = (float3(a, b, c) * 2 - 1) * 128;
+	particle_buffer[id] = self;
+}
+
+//[numthreads(8, 8, 1)]
+//void Blur(uint2 id : SV_DispatchThreadID)
+//{
+//	float4 res = flow_texture[id];
+//	res += flow_texture[id + int2(1, 0)] * 0.5;
+//	res += flow_texture[id + int2(-1, 0)] * 0.5;
+//	res += flow_texture[id + int2(0, 1)] * 0.5;
+//	res += flow_texture[id + int2(0, -1)] * 0.5;
+//	flow_texture[id] = res / 3;
+//}

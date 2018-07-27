@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: 24a7d160347b19c45a046a2bf59bad52
+timeCreated: 1488872950
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Alien_squid_bone013
+    100002: Alien_squid_bone014
+    100004: Alien_squid_bone015
+    100006: Alien_squid_bone016
+    100008: Alien_squid_bone017
+    100010: Alien_squid_bone018
+    100012: Alien_squid_bone019
+    100014: Alien_squid_bone020
+    100016: Alien_squid_bone021
+    100018: Alien_squid_bone022
+    100020: Alien_squid_bone023
+    100022: Alien_squid_bone024
+    100024: Alien_squid_bone025
+    100026: //RootNode
+    100028: Alien_squidB
+    400000: Alien_squid_bone013
+    400002: Alien_squid_bone014
+    400004: Alien_squid_bone015
+    400006: Alien_squid_bone016
+    400008: Alien_squid_bone017
+    400010: Alien_squid_bone018
+    400012: Alien_squid_bone019
+    400014: Alien_squid_bone020
+    400016: Alien_squid_bone021
+    400018: Alien_squid_bone022
+    400020: Alien_squid_bone023
+    400022: Alien_squid_bone024
+    400024: Alien_squid_bone025
+    400026: //RootNode
+    400028: Alien_squidB
+    4300000: Alien_squidB
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Alien_squidB
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 125
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Alien_squid_bone014
+        weight: 1
+      - path: Alien_squid_bone014/Alien_squid_bone015
+        weight: 1
+      - path: Alien_squid_bone014/Alien_squid_bone015/Alien_squid_bone016
+        weight: 1
+      - path: Alien_squid_bone014/Alien_squid_bone015/Alien_squid_bone016/Alien_squid_bone017
+        weight: 1
+      - path: Alien_squid_bone014/Alien_squid_bone018
+        weight: 1
+      - path: Alien_squid_bone014/Alien_squid_bone018/Alien_squid_bone019
+        weight: 1
+      - path: Alien_squid_bone014/Alien_squid_bone018/Alien_squid_bone019/Alien_squid_bone013
+        weight: 1
+      - path: Alien_squid_bone014/Alien_squid_bone021
+        weight: 1
+      - path: Alien_squid_bone014/Alien_squid_bone021/Alien_squid_bone022
+        weight: 1
+      - path: Alien_squid_bone014/Alien_squid_bone021/Alien_squid_bone022/Alien_squid_bone023
+        weight: 1
+      - path: Alien_squid_bone014/Alien_squid_bone024
+        weight: 1
+      - path: Alien_squid_bone014/Alien_squid_bone024/Alien_squid_bone025
+        weight: 1
+      - path: Alien_squid_bone014/Alien_squid_bone024/Alien_squid_bone025/Alien_squid_bone020
+        weight: 1
+      - path: Alien_squidB
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

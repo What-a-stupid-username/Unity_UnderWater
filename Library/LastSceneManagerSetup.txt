@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Alien_planets_Vol2/Scenes/Depth_planet.unity
+  isLoaded: 1
+  isActive: 1

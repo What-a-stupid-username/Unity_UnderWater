@@ -1,0 +1,82 @@
+﻿#pragma kernel FirstStage
+#pragma kernel SecondStage
+#pragma kernel Init
+
+struct Flow_field_Info
+{
+	float2 v;
+	float2 a;
+	float d;
+};
+
+
+RWTexture2D<float4> flow_Texture;
+RWStructuredBuffer<Flow_field_Info> flow_field_buffer;
+RWStructuredBuffer<Flow_field_Info> temp_buffer;
+float4 stride;
+
+//tools
+//-----------------------------------------------------------------
+uint Index(int3 id_) {
+	int3 id = id_;
+	int4 intStride = int4(stride);
+	id.x = clamp(id.x, 0, stride.y - 1);
+	id.y = clamp(id.y, 0, stride.y - 1);
+	return id.x * intStride.x + id.y * intStride.y;
+}
+//-----------------------------------------------------------------
+
+[numthreads(8,8,1)]
+void FirstStage (uint3 id : SV_DispatchThreadID)
+{
+	Flow_field_Info self = flow_field_buffer[Index(id)];
+	Flow_field_Info left = flow_field_buffer[Index(id + int3(-1, 0, 0))];
+	Flow_field_Info right = flow_field_buffer[Index(id + int3(1, 0, 0))];
+	Flow_field_Info up = flow_field_buffer[Index(id + int3(0, 1, 0))];
+	Flow_field_Info down = flow_field_buffer[Index(id + int3(0, -1, 0))];
+
+
+	float d = (left.d - self.d);
+	d += (right.d - self.d);
+	d += (up.d - self.d);
+	d += (down.d - self.d);
+	
+
+	float2 a = float2(0, 0);
+	a.x = (left.d - right.d) / 10;
+	a.y = (down.d - up.d) / 10;
+	
+	self.v = a;
+	self.d += d;
+
+	temp_buffer[Index(id)] = self;
+}
+
+
+
+
+
+
+
+
+
+//-----------------------------------------------------------------------------
+[numthreads(8, 8, 1)]
+void SecondStage(uint3 id : SV_DispatchThreadID)
+{
+	Flow_field_Info info = temp_buffer[Index(id)];
+	//if (id.x == 128 && id.y == 128) info.d = 10;
+	flow_field_buffer[Index(id)] = info;
+	float r = info.d / 1000;
+	flow_Texture[id.xy] = float4(r,r,r,r);
+}
+
+[numthreads(64, 1, 1)]
+void Init(uint3 id : SV_DispatchThreadID)
+{
+	Flow_field_Info info;
+	info.v = float2(0, 0);
+	info.d = 1;
+	info.a = float2(0, 0);
+	flow_field_buffer[id.x] = info;
+}

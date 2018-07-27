@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: 7a44dd25524756943b978ec140bcda93
+timeCreated: 1488965015
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Flaming_AlienC
+    100004: flaming_bone020
+    100006: flaming_bone021
+    100008: flaming_bone022
+    100010: flaming_bone023
+    100012: flaming_bone024
+    100014: flaming_bone025
+    100016: flaming_bone026
+    100018: flaming_bone027
+    100020: flaming_bone028
+    100022: flaming_bone029
+    400000: //RootNode
+    400002: Flaming_AlienC
+    400004: flaming_bone020
+    400006: flaming_bone021
+    400008: flaming_bone022
+    400010: flaming_bone023
+    400012: flaming_bone024
+    400014: flaming_bone025
+    400016: flaming_bone026
+    400018: flaming_bone027
+    400020: flaming_bone028
+    400022: flaming_bone029
+    4300000: Flaming_AlienC
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Flaming_AlienC
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 125
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Flaming_AlienC
+        weight: 1
+      - path: flaming_bone024
+        weight: 1
+      - path: flaming_bone024/flaming_bone020
+        weight: 1
+      - path: flaming_bone024/flaming_bone021
+        weight: 1
+      - path: flaming_bone024/flaming_bone022
+        weight: 1
+      - path: flaming_bone024/flaming_bone023
+        weight: 1
+      - path: flaming_bone024/flaming_bone025
+        weight: 1
+      - path: flaming_bone024/flaming_bone026
+        weight: 1
+      - path: flaming_bone024/flaming_bone026/flaming_bone027
+        weight: 1
+      - path: flaming_bone024/flaming_bone028
+        weight: 1
+      - path: flaming_bone024/flaming_bone028/flaming_bone029
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
